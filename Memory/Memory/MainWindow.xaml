@@ -1,0 +1,24 @@
+﻿<Window x:Class="Memory.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Memory"
+        mc:Ignorable="d"
+        Title="Memory" Height="425" Width="500" ResizeMode="NoResize">
+    <Window.DataContext>
+        <local:MainViewModel />
+    </Window.DataContext>
+    <Grid Background="Bisque">
+        <Border BorderBrush="DarkOrange" BorderThickness="1"/>
+        <ListBox ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}" DisplayMemberPath="Username" Margin="30,89,250,70" Height="250" Width="220" BorderBrush="BlanchedAlmond"/>
+        <Button Content="New User" HorizontalAlignment="Left" Margin="85,344,0,0" VerticalAlignment="Top" Height="25" Width="70" Background="White" BorderBrush="BlanchedAlmond" Command="{Binding AddUserCommand}"/>
+        <Button Content="Delete User" HorizontalAlignment="Left" Margin="175,344,0,0" VerticalAlignment="Top" Height="25" Width="70" Background="White" BorderBrush="BlanchedAlmond" Command="{Binding DeleteUserCommand}"/>
+        <Button Content="Play" HorizontalAlignment="Left" Margin="265,344,0,0" VerticalAlignment="Top" Height="25" Width="70" Background="White" BorderBrush="BlanchedAlmond" Command="{Binding PlayCommand}"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="355,344,0,0" VerticalAlignment="Top" Height="25" Width="70" Background="White" BorderBrush="BlanchedAlmond" Command="{Binding CancelCommand}"/>
+        <Button Content="&lt;&lt;" HorizontalAlignment="Left" Margin="317,224,0,0" VerticalAlignment="Top" Height="21" Width="35" Background="White" BorderBrush="BlanchedAlmond" Command="{Binding PreviousImageCommand}"/>
+        <Button Content=">>" HorizontalAlignment="Left" Margin="382,224,0,0" VerticalAlignment="Top" Height="21" Width="35" Background="White" BorderBrush="BlanchedAlmond" Command="{Binding NextImageCommand}"/>
+        <Image HorizontalAlignment="Left" Height="74" Margin="130,10,0,0" VerticalAlignment="Top" Width="245" Source="{Binding LogoImage}"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="317,106,0,0" VerticalAlignment="Top" Width="100" Source="{Binding CurrentImagePath}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,60 @@
+﻿<Window x:Class="Memory.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Memory"
+        mc:Ignorable="d"
+        Title="Memory" Height="600" Width="500">
+    <DockPanel Background="Bisque">
+        <Menu DockPanel.Dock="Top" Background="DarkOrange">
+            <MenuItem Header="File" Background="Bisque">
+                <MenuItem Header="Category">
+                    <MenuItem Header="Default" Command="{Binding SetCategory1Command}"/>
+                    <MenuItem Header="Paintings" Command="{Binding SetCategory2Command}"/>
+                    <MenuItem Header="Landmarks" Command="{Binding SetCategory3Command}"/>
+                </MenuItem>
+                <MenuItem Header="New Game" Command="{Binding NewGameCommand}"/>
+                <MenuItem Header="Statistics" Command="{Binding ShowStatisticsCommand}"/>
+                <MenuItem Header="Exit" Command="{Binding ExitCommand}"/>
+            </MenuItem>
+            <MenuItem Header="Options" Background="Bisque">
+                <MenuItem Header="Standard" Command="{Binding SetStandardModeCommand}"/>
+                <MenuItem Header="Custom">
+                    <MenuItem Header="3 x 4" Command="{Binding SetCustom3x4Command}"/>
+                    <MenuItem Header="4 x 5" Command="{Binding SetCustom4x5Command}"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help" Background="Bisque">
+                <MenuItem Header="About" Command="{Binding ShowAboutCommand}"/>
+            </MenuItem>
+        </Menu>
+        <Border Background="Bisque" HorizontalAlignment="Right" VerticalAlignment="Top" CornerRadius="10" Margin="10">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+                <Image Source="{Binding ProfileImageSource}" Width="40" Height="40" Margin="0,0,10,0"/>
+                <TextBlock Text="{Binding Username}" VerticalAlignment="Center" FontSize="16"/>
+            </StackPanel>
+        </Border>
+        <!-- Main content goes here -->
+        <Grid>
+            <ItemsControl ItemsSource="{Binding Cards}" Margin="0,64,35,32">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="4"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Command="{Binding DataContext.FlipCardCommand, RelativeSource={RelativeSource AncestorType=Window}}"
+                        CommandParameter="{Binding}"
+                        Background="Transparent"
+                        BorderThickness="0">
+                            <Image Source="{Binding CurrentImage}"/>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            <TextBlock Text="{Binding TimeRemainingDisplay}" HorizontalAlignment="Left" Margin="313,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="27" Width="82" FontSize="16"/>
+        </Grid>
+    </DockPanel>
+</Window>
