@@ -26,7 +26,6 @@ This is a simple but engaging Memory Game application built using C# and WPF, de
 - To implement MVVM and more readily use it in future projects
 
 💡 What To Expect In The Future : Just because I've turned in this project does not mean I'm finished working on it! I believe any project can be perfected through hard work and perseverance and wish to further improve my game by adding:
-  - a game saving feature to go back to any unfinished games
   - a pause button
   - sound effects
   - different timer settings for each game mode
