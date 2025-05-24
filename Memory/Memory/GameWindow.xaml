@@ -6,6 +6,10 @@
         xmlns:local="clr-namespace:Memory"
         mc:Ignorable="d"
         Title="Memory" Height="600" Width="500">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <local:InverseBooleanConverter x:Key="InverseBool"/>
+    </Window.Resources>
     <DockPanel Background="Bisque">
         <Menu DockPanel.Dock="Top" Background="DarkOrange">
             <MenuItem Header="File" Background="Bisque">
@@ -46,9 +50,10 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Button Command="{Binding DataContext.FlipCardCommand, RelativeSource={RelativeSource AncestorType=Window}}"
-                        CommandParameter="{Binding}"
-                        Background="Transparent"
-                        BorderThickness="0">
+            CommandParameter="{Binding}"
+            Background="Transparent"
+            BorderThickness="0"
+            Visibility="{Binding Visibility}">
                             <Image Source="{Binding CurrentImage}"/>
                         </Button>
                     </DataTemplate>

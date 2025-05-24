@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
-using System.Windows.Media;
 using System.IO;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows;
 
 namespace Memory
 {
@@ -38,13 +35,16 @@ namespace Memory
             {
                 _isMatched = value;
                 OnPropertyChanged(nameof(IsMatched));
+                OnPropertyChanged(nameof(Visibility));
             }
         }
 
         public ImageSource CurrentImage =>
             new BitmapImage(new Uri(IsFlipped || IsMatched ? GetUri(FrontImagePath) : GetUri(BackImagePath), UriKind.Absolute));
 
-        private string GetUri(string path) => Path.GetFullPath(path); // full path needed for BitmapImage
+        public Visibility Visibility => IsMatched ? Visibility.Collapsed : Visibility.Visible;
+
+        private string GetUri(string path) => Path.GetFullPath(path);
 
         private void OnPropertyChanged(string name) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

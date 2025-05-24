@@ -116,9 +116,9 @@ namespace Memory
             ExitCommand = new RelayCommand(_ => ExitToMainMenu());
             ShowAboutCommand = new RelayCommand(_ => ShowAbout());
             FlipCardCommand = new RelayCommand(param => FlipCard(param as Card));
-            SetStandardModeCommand = new RelayCommand(_ => { CurrentGameMode = GameMode.Standard; NewGame(); });
-            SetCustom3x4Command = new RelayCommand(_ => { CurrentGameMode = GameMode.Custom_3x4; NewGame(); });
-            SetCustom4x5Command = new RelayCommand(_ => { CurrentGameMode = GameMode.Custom_4x5; NewGame(); });
+            SetStandardModeCommand = new RelayCommand(_ => { CurrentGameMode = GameMode.Standard; });
+            SetCustom3x4Command = new RelayCommand(_ => { CurrentGameMode = GameMode.Custom_3x4; });
+            SetCustom4x5Command = new RelayCommand(_ => { CurrentGameMode = GameMode.Custom_4x5; });
             SetCategory1Command = new RelayCommand(_ => { CurrentCategory = CardCategory.Category1; });
             SetCategory2Command = new RelayCommand(_ => { CurrentCategory = CardCategory.Category2; });
             SetCategory3Command = new RelayCommand(_ => { CurrentCategory = CardCategory.Category3; });
