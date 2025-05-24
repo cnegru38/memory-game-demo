@@ -8,4 +8,174 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\Cards\Category1\img1.png" />
+    <None Remove="Assets\Cards\Category1\img10.png" />
+    <None Remove="Assets\Cards\Category1\img2.png" />
+    <None Remove="Assets\Cards\Category1\img3.png" />
+    <None Remove="Assets\Cards\Category1\img4.png" />
+    <None Remove="Assets\Cards\Category1\img5.png" />
+    <None Remove="Assets\Cards\Category1\img6.png" />
+    <None Remove="Assets\Cards\Category1\img7.png" />
+    <None Remove="Assets\Cards\Category1\img8.png" />
+    <None Remove="Assets\Cards\Category1\img9.png" />
+    <None Remove="Assets\Cards\Category2\img1.png" />
+    <None Remove="Assets\Cards\Category2\img10.png" />
+    <None Remove="Assets\Cards\Category2\img2.png" />
+    <None Remove="Assets\Cards\Category2\img3.png" />
+    <None Remove="Assets\Cards\Category2\img4.png" />
+    <None Remove="Assets\Cards\Category2\img5.png" />
+    <None Remove="Assets\Cards\Category2\img6.png" />
+    <None Remove="Assets\Cards\Category2\img7.png" />
+    <None Remove="Assets\Cards\Category2\img8.png" />
+    <None Remove="Assets\Cards\Category2\img9.png" />
+    <None Remove="Assets\Cards\Category3\img1.png" />
+    <None Remove="Assets\Cards\Category3\img10.png" />
+    <None Remove="Assets\Cards\Category3\img2.png" />
+    <None Remove="Assets\Cards\Category3\img3.png" />
+    <None Remove="Assets\Cards\Category3\img4.png" />
+    <None Remove="Assets\Cards\Category3\img5.png" />
+    <None Remove="Assets\Cards\Category3\img6.png" />
+    <None Remove="Assets\Cards\Category3\img7.png" />
+    <None Remove="Assets\Cards\Category3\img8.png" />
+    <None Remove="Assets\Cards\Category3\img9.png" />
+    <None Remove="Assets\card_back.png" />
+    <None Remove="Assets\cat.png" />
+    <None Remove="Assets\chess.png" />
+    <None Remove="Assets\dog.png" />
+    <None Remove="Assets\flower.png" />
+    <None Remove="Assets\frog.png" />
+    <None Remove="Assets\horse.png" />
+    <None Remove="Assets\Icon.png" />
+    <None Remove="Assets\lion.png" />
+    <None Remove="Assets\logo.png" />
+    <None Remove="Assets\love.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Cards\Category1\img1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category1\img10.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category1\img2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category1\img3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category1\img4.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category1\img5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category1\img6.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category1\img7.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category1\img8.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category1\img9.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category2\img1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category2\img10.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category2\img2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category2\img3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category2\img4.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category2\img5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category2\img6.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category2\img7.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category2\img8.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category2\img9.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category3\img1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category3\img10.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category3\img2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category3\img3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category3\img4.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category3\img5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category3\img6.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category3\img7.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category3\img8.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Cards\Category3\img9.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\card_back.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\cat.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\chess.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\dog.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\flower.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\frog.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\horse.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icon.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\lion.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\logo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\love.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>

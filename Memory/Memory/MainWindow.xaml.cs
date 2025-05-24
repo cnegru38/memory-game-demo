@@ -14,9 +14,8 @@ namespace Memory
         {
             InitializeComponent();
 
-            string iconRelativePath = @"Assets\Icon.png";
-            string iconFullPath = Path.GetFullPath(iconRelativePath);
-            this.Icon = BitmapFrame.Create(new Uri(iconFullPath, UriKind.Absolute));
+            this.Icon = BitmapFrame.Create(new Uri("pack://application:,,,/Assets/Icon.png", UriKind.Absolute));
+
         }
     }
 }

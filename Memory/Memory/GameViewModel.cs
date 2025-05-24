@@ -24,7 +24,7 @@ namespace Memory
         {
             get
             {
-                if (CurrentUser?.ProfileImage?.FilePath != null && File.Exists(CurrentUser.ProfileImage.FilePath))
+                if (!string.IsNullOrEmpty(CurrentUser?.ProfileImage?.FilePath))
                 {
                     return new BitmapImage(new Uri(CurrentUser.ProfileImage.FilePath, UriKind.Absolute));
                 }
@@ -67,6 +67,7 @@ namespace Memory
 
         #endregion
 
+        #region Category definition
         public enum CardCategory
         {
             Category1,
@@ -85,6 +86,7 @@ namespace Memory
                 OnPropertyChanged(nameof(CurrentCategory));
             }
         }
+        #endregion
 
         #region Commands
         public ICommand NewGameCommand { get; }
@@ -152,21 +154,72 @@ namespace Memory
                 _ => 8
             };
 
-            string categoryPath = $"Assets/Cards/{CurrentCategory}";
-            if (!Directory.Exists(categoryPath))
+            List<string> GetCardUrisForCategory(CardCategory category)
             {
-                MessageBox.Show($"Image folder not found: {categoryPath}");
+                string baseUri = "pack://application:,,,/Assets/Cards/";
+
+                return category switch
+                {
+                    CardCategory.Category1 => new List<string>
+                {
+                        #region Card image links
+                    $"{baseUri}Category1/img1.png",
+                    $"{baseUri}Category1/img2.png",
+                    $"{baseUri}Category1/img3.png",
+                    $"{baseUri}Category1/img4.png",
+                    $"{baseUri}Category1/img5.png",
+                    $"{baseUri}Category1/img6.png",
+                    $"{baseUri}Category1/img7.png",
+                    $"{baseUri}Category1/img8.png",
+                    $"{baseUri}Category1/img9.png",
+                    $"{baseUri}Category1/img10.png",
+                },
+                            CardCategory.Category2 => new List<string>
+                {
+                    $"{baseUri}Category2/img1.png",
+                    $"{baseUri}Category2/img2.png",
+                    $"{baseUri}Category2/img3.png",
+                    $"{baseUri}Category2/img4.png",
+                    $"{baseUri}Category2/img5.png",
+                    $"{baseUri}Category2/img6.png",
+                    $"{baseUri}Category2/img7.png",
+                    $"{baseUri}Category2/img8.png",
+                    $"{baseUri}Category2/img9.png",
+                    $"{baseUri}Category2/img10.png",
+                },
+                            CardCategory.Category3 => new List<string>
+                {
+                    $"{baseUri}Category3/img1.png",
+                    $"{baseUri}Category3/img2.png",
+                    $"{baseUri}Category3/img3.png",
+                    $"{baseUri}Category3/img4.png",
+                    $"{baseUri}Category3/img5.png",
+                    $"{baseUri}Category3/img6.png",
+                    $"{baseUri}Category3/img7.png",
+                    $"{baseUri}Category3/img8.png",
+                    $"{baseUri}Category3/img9.png",
+                    $"{baseUri}Category3/img10.png",
+                },
+                    #endregion
+
+                    _ => new List<string>()
+                };
+            }
+
+            var allImages = GetCardUrisForCategory(CurrentCategory);
+            if (allImages.Count < pairCount)
+            {
+                MessageBox.Show($"Not enough card images in {CurrentCategory}");
                 return;
             }
 
-            var images = Directory.GetFiles(categoryPath)
-                                  .OrderBy(_ => Guid.NewGuid())
+            var images = allImages.OrderBy(_ => Guid.NewGuid())
                                   .Take(pairCount)
                                   .ToList();
 
             var cardImages = images.Concat(images)
-                                    .OrderBy(_ => Guid.NewGuid())
-                                    .ToList();
+                                   .OrderBy(_ => Guid.NewGuid())
+                                   .ToList();
 
             Cards = new ObservableCollection<Card>(
                 cardImages.Select(img => new Card { FrontImagePath = img }));

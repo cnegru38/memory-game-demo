@@ -1,9 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using System.IO;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows;
 
 namespace Memory
 {
@@ -14,8 +13,10 @@ namespace Memory
         private bool _isFlipped;
         private bool _isMatched;
 
-        public string FrontImagePath { get; set; }  // Unique image per card pair
-        public string BackImagePath { get; set; } = "Assets/card_back.png"; // Default back image
+        public string FrontImagePath { get; set; }
+
+        // Default pack URI for card back image
+        public string BackImagePath { get; set; } = "pack://application:,,,/Assets/card_back.png";
 
         public bool IsFlipped
         {
@@ -36,15 +37,20 @@ namespace Memory
                 _isMatched = value;
                 OnPropertyChanged(nameof(IsMatched));
                 OnPropertyChanged(nameof(Visibility));
+                OnPropertyChanged(nameof(CurrentImage));
             }
         }
 
-        public ImageSource CurrentImage =>
-            new BitmapImage(new Uri(IsFlipped || IsMatched ? GetUri(FrontImagePath) : GetUri(BackImagePath), UriKind.Absolute));
+        public ImageSource CurrentImage
+        {
+            get
+            {
+                string uri = IsFlipped || IsMatched ? FrontImagePath : BackImagePath;
+                return new BitmapImage(new Uri(uri, UriKind.Absolute));
+            }
+        }
 
         public Visibility Visibility => IsMatched ? Visibility.Collapsed : Visibility.Visible;
-
-        private string GetUri(string path) => Path.GetFullPath(path);
 
         private void OnPropertyChanged(string name) =>
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));

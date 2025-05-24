@@ -38,8 +38,7 @@ namespace Memory
             get
             {
                 if (_images.Count == 0) return null;
-                var path = _images[_currentIndex].FilePath;
-                return File.Exists(path) ? path : null;
+                return _images.Count > 0 ? _images[_currentIndex].FilePath : null;
             }
         }
 
@@ -92,25 +91,22 @@ namespace Memory
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
             string imagesDir = Path.Combine(baseDir, "Assets");
 
-            string logoPath = Path.Combine(imagesDir, "logo.png");
-            if (File.Exists(logoPath))
-            {
-                LogoImage = new BitmapImage(new Uri(logoPath, UriKind.Absolute));
-            }
+            LogoImage = new BitmapImage(new Uri("pack://application:,,,/Assets/logo.png", UriKind.Absolute));
 
             _images = new ObservableCollection<Image>
             {
                 #region Profile photo links
-               new Image(1, Path.Combine(imagesDir, "lion.png")),
-               new Image(2, Path.Combine(imagesDir, "horse.png")),
-               new Image(3, Path.Combine(imagesDir, "flower.png")),
-               new Image(4, Path.Combine(imagesDir, "chess.png")),
-               new Image(5, Path.Combine(imagesDir, "cat.png")),
-               new Image(6, Path.Combine(imagesDir, "dog.png")),
-               new Image(7, Path.Combine(imagesDir, "frog.png")),
-               new Image(8, Path.Combine(imagesDir, "love.png"))
+                new Image(1, "pack://application:,,,/Assets/lion.png"),
+                new Image(2, "pack://application:,,,/Assets/horse.png"),
+                new Image(3, "pack://application:,,,/Assets/flower.png"),
+                new Image(4, "pack://application:,,,/Assets/chess.png"),
+                new Image(5, "pack://application:,,,/Assets/cat.png"),
+                new Image(6, "pack://application:,,,/Assets/dog.png"),
+                new Image(7, "pack://application:,,,/Assets/frog.png"),
+                new Image(8, "pack://application:,,,/Assets/love.png")
                 #endregion
             };
+
 
             _currentIndex = 0;
 
